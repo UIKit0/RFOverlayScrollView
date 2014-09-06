@@ -11,5 +11,6 @@
 @interface RFOverlayScrollView : NSScrollView
 
 @property (nonatomic, assign) NSInteger headerOffset;
+@property (nonatomic, assign) NSInteger footerOffset;
 
 @end

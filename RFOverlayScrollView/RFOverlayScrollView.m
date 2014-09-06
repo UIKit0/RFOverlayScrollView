@@ -29,6 +29,7 @@ static NSComparisonResult scrollerAboveSiblingViewsComparator(NSView *view1, NSV
     if (self) {
         self.wantsLayer = YES;
         _headerOffset = [self tableHeaderOffsetFromSuperview];
+        _footerOffset = 0.0f;
     }
     return self;
 }
@@ -37,6 +38,7 @@ static NSComparisonResult scrollerAboveSiblingViewsComparator(NSView *view1, NSV
 {
     self.wantsLayer = YES;
     _headerOffset = [self tableHeaderOffsetFromSuperview];
+    _footerOffset = 0.0f;
 }
 
 - (void)tile
@@ -56,7 +58,7 @@ static NSComparisonResult scrollerAboveSiblingViewsComparator(NSView *view1, NSV
         self.bounds.size.width - width,
         self.headerOffset,
         width,
-        self.bounds.size.height - self.headerOffset
+        self.bounds.size.height - self.headerOffset - self.footerOffset
     }];
     
     // Move scroller to front
